@@ -1,0 +1,4 @@
+AccessModifierOffset: 0
+IndentAccessModifiers: true 
+BasedOnStyle: LLVM
+AllowShortFunctionsOnASingleLine: Empty

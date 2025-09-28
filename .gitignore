@@ -1,0 +1,51 @@
+# ---- Build artifacts ----
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+*.exe
+*.out
+*.app
+
+# ---- CMake ----
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/Makefile
+/*.cmake
+/build/
+/bin/
+/lib/
+
+# ---- IDE / Editor ----
+# VSCode
+.vscode/
+*.code-workspace
+
+# CLion / JetBrains
+.idea/
+
+# Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj*
+*.pdb
+
+# Xcode
+*.xcworkspace
+*.xcuserdata/
+*.xcuserstate
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj   # Keep the project definition
+
+# ---- OS specific ----
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
