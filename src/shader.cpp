@@ -1,5 +1,6 @@
 #include "shader.h"
 #include <fstream>
+#include <glm/glm.hpp>
 #include <iostream>
 #include <sstream>
 
@@ -69,4 +70,19 @@ void Shader::Activate() {
 
 void Shader::Delete() {
   glDeleteProgram(ID);
+}
+
+void Shader::setInt(const char *name, int v) const {
+  glUniform1i(glGetUniformLocation(ID, name), v);
+}
+void Shader::setFloat(const char *name, float v) const {
+  glUniform1f(glGetUniformLocation(ID, name), v);
+}
+
+void Shader::setVec2(const char *name, const glm::vec2 &v) const {
+  glUniform2f(glGetUniformLocation(ID, name), v.x, v.y);
+}
+
+void Shader::setMat4(const char *name, const glm::mat4 &m) const {
+  glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, &m[0][0]);
 }

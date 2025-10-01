@@ -13,6 +13,15 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_library(glad vendor/glad/src/glad.c)
 target_include_directories(glad PUBLIC vendor/glad/include)
 
+# ---- stb (header-only, placed under vendor/stb/include) ----
+add_library(stb INTERFACE)
+target_include_directories(stb INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/vendor/stb/include)
+
+
+# --- GLM (header only)
+add_library(glm INTERFACE)
+target_include_directories(glm INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/vendor/glm)
+
 # Find GLFW installed via Homebrew
 # brew installs a CMake config, so this should work:
 find_package(glfw3 REQUIRED)
@@ -30,6 +39,8 @@ target_link_libraries(app
   PRIVATE
     glad
     glfw
+    stb
+    glm
     OpenGL::GL
     "-framework Cocoa"
     "-framework IOKit"
